@@ -1,0 +1,580 @@
+
+/* ================================
+   PIZZACRAFT ADMIN PIZZAS
+================================ */
+
+.admin-pizzas {
+  min-height: 100vh;
+  padding: 36px;
+  background: #fffaf5;
+  color: #292524;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header */
+
+.admin-pizzas__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.admin-pizzas__header h1 {
+  margin: 6px 0 10px;
+  font-size: clamp(28px, 3vw, 36px);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #292524;
+}
+
+.admin-pizzas__header p:not(.admin-pizzas__eyebrow) {
+  margin: 0;
+  color: #78716c;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.admin-pizzas__eyebrow {
+  margin: 0;
+  color: #dc2626;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* Notices */
+
+.admin-pizzas__notice,
+.admin-pizzas__error {
+  margin-bottom: 22px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.admin-pizzas__notice {
+  color: #166534;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+.admin-pizzas__error {
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+}
+
+/* Main layout */
+
+
+.admin-pizzas__layout {
+  display: grid;
+  grid-template-columns: minmax(420px, 0.9fr) minmax(0, 1.5fr);
+  align-items: start;
+  gap: 26px;
+}
+
+
+/* Form panel */
+
+.admin-pizzas__form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #f0e5dc;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(68, 42, 25, 0.05);
+}
+
+.admin-pizzas__form h2,
+.admin-pizzas__menu-heading h2 {
+  margin: 0;
+  color: #292524;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.admin-pizzas__form h2 {
+  margin-bottom: 8px;
+}
+
+.admin-pizzas__form label {
+  margin-top: 5px;
+  color: #44403c;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.admin-pizzas__form input:not([type="file"]),
+.admin-pizzas__form textarea {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid #e7ddd4;
+  border-radius: 9px;
+  outline: none;
+  background: #fffdfb;
+  color: #292524;
+  font: inherit;
+  font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-pizzas__form textarea {
+  min-height: 105px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.admin-pizzas__form input:not([type="file"]):focus,
+.admin-pizzas__form textarea:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.admin-pizzas__form input::placeholder,
+.admin-pizzas__form textarea::placeholder {
+  color: #a8a29e;
+}
+
+/* Image upload */
+
+.admin-pizzas__form input[type="file"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px dashed #d6c7bb;
+  border-radius: 9px;
+  background: #fffaf5;
+  color: #57534e;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.admin-pizzas__form input[type="file"]::file-selector-button {
+  margin-right: 10px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.admin-pizzas__preview {
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  margin-top: 4px;
+  border: 1px solid #f0e5dc;
+  border-radius: 12px;
+  background: #fff7ed;
+}
+
+.admin-pizzas__preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.admin-pizzas__hint {
+  margin: 0;
+  color: #78716c;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Buttons */
+
+.admin-pizzas__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.admin-pizzas__primary,
+.admin-pizzas__secondary,
+.admin-pizzas__danger {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+  padding: 10px 15px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.admin-pizzas__primary {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.admin-pizzas__primary:hover:not(:disabled) {
+  background: #b91c1c;
+  transform: translateY(-1px);
+}
+
+.admin-pizzas__secondary {
+  background: #ffffff;
+  color: #44403c;
+  border-color: #e7ddd4;
+}
+
+.admin-pizzas__secondary:hover:not(:disabled) {
+  background: #fff1e8;
+  border-color: #f3c6b4;
+}
+
+.admin-pizzas__danger {
+  background: #fff1f2;
+  color: #be123c;
+  border-color: #fecdd3;
+}
+
+.admin-pizzas__danger:hover:not(:disabled) {
+  background: #ffe4e6;
+  border-color: #fda4af;
+}
+
+.admin-pizzas__primary:disabled,
+.admin-pizzas__secondary:disabled,
+.admin-pizzas__danger:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Menu panel */
+
+.admin-pizzas__menu {
+  min-width: 0;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #f0e5dc;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(68, 42, 25, 0.05);
+}
+
+.admin-pizzas__menu-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.admin-pizzas__menu-heading span {
+  flex-shrink: 0;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: #fff1e8;
+  color: #c2410c;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.admin-pizzas__menu > p {
+  padding: 22px 16px;
+  border: 1px dashed #e7ddd4;
+  border-radius: 10px;
+  color: #78716c;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Pizza cards */
+
+.admin-pizzas__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.admin-pizzas__card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #f0e5dc;
+  border-radius: 14px;
+  background: #ffffff;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-pizzas__card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(68, 42, 25, 0.09);
+}
+
+.admin-pizzas__image,
+.admin-pizzas__no-image {
+  display: block;
+  width: 100%;
+  height: 175px;
+}
+
+.admin-pizzas__image {
+  object-fit: cover;
+  background: #fff7ed;
+}
+
+.admin-pizzas__no-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background: #fff1e8;
+  color: #a8a29e;
+  font-size: 13px;
+  text-align: center;
+}
+
+.admin-pizzas__card-body {
+  padding: 16px;
+}
+
+.admin-pizzas__card-body h3 {
+  margin: 0 0 8px;
+  color: #292524;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.admin-pizzas__card-body > p {
+  min-height: 42px;
+  margin: 0 0 14px;
+  color: #78716c;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.admin-pizzas__card-body > strong {
+  display: block;
+  color: #dc2626;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.admin-pizzas__card-body .admin-pizzas__actions {
+  padding-top: 12px;
+  border-top: 1px solid #f5eee8;
+}
+
+.admin-pizzas__card-body .admin-pizzas__secondary,
+.admin-pizzas__card-body .admin-pizzas__danger {
+  flex: 1;
+}
+
+/* Tablet */
+
+@media (max-width: 1050px) {
+  .admin-pizzas {
+    padding: 28px;
+  }
+
+  .admin-pizzas__layout {
+    grid-template-columns: minmax(250px, 320px) minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .admin-pizzas__form,
+  .admin-pizzas__menu {
+    padding: 20px;
+  }
+
+  .admin-pizzas__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-pizzas__image,
+  .admin-pizzas__no-image {
+    height: 200px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 760px) {
+  .admin-pizzas {
+    padding: 20px 14px;
+  }
+
+  .admin-pizzas__header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .admin-pizzas__header h1 {
+    font-size: 28px;
+  }
+
+  .admin-pizzas__header > button {
+    width: 100%;
+  }
+
+  .admin-pizzas__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-pizzas__form,
+  .admin-pizzas__menu {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .admin-pizzas__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .admin-pizzas__image,
+  .admin-pizzas__no-image {
+    height: 130px;
+  }
+
+  .admin-pizzas__card-body {
+    padding: 12px;
+  }
+
+  .admin-pizzas__card-body h3 {
+    font-size: 15px;
+  }
+
+  .admin-pizzas__card-body > p {
+    min-height: 0;
+    font-size: 12px;
+  }
+
+  .admin-pizzas__card-body > strong {
+    font-size: 15px;
+  }
+
+  .admin-pizzas__card-body .admin-pizzas__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admin-pizzas__card-body .admin-pizzas__secondary,
+  .admin-pizzas__card-body .admin-pizzas__danger {
+    width: 100%;
+    flex: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .admin-pizzas__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-pizzas__image,
+  .admin-pizzas__no-image {
+    height: 190px;
+  }
+
+  .admin-pizzas__menu-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-pizzas__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admin-pizzas__actions > button {
+    width: 100%;
+  }
+}
+
+
+
+
+/* =================================
+   INGREDIENT EDITOR IMPROVEMENTS
+================================= */
+
+.admin-pizzas__form {
+  min-width: 0;
+}
+
+.admin-pizzas__form section {
+  min-width: 0;
+}
+
+.admin-pizzas__form section > div {
+  min-width: 0;
+}
+
+/* Give ingredient names more room */
+.admin-pizzas__form section > div > div:first-child {
+  min-width: 0;
+}
+
+.admin-pizzas__form section > div input {
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
+}
+
+/* Make ingredient labels easier to read */
+.admin-pizzas__form section label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+/* Keep ingredient action buttons readable */
+.admin-pizzas__form section button {
+  white-space: nowrap;
+}
+
+/* Improve the layout on smaller screens */
+@media (max-width: 1100px) {
+  .admin-pizzas__layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .admin-pizzas__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-pizzas__form section > div {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  }
+
+  .admin-pizzas__form section > div > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .admin-pizzas__form section > div > button {
+    width: 100%;
+  }
+
+  .admin-pizzas__grid {
+    grid-template-columns: 1fr;
+  }
+}
