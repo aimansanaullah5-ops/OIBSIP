@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="Calculator">
+    <div class="display">
+      <div id="expression" class="expression"></div>
+      <div id="current" class="current">0</div>
+    </div>
+    <div class="buttons">
+      <button data-Action="clear">C</button>
+      <button data-Action="backspace">⌫</button>
+      <button data-Operator="/">÷</button>
+      <button data-Operator="*">×</button>
+
+      <button data-Number="7">7</button>
+      <button data-Number="8">8</button>
+      <button data-Number="9">9</button>
+      <button data-Operator="-">−</button>
+
+      <button data-Number="4">4</button>
+      <button data-Number="5">5</button>
+      <button data-Number="6">6</button>
+      <button data-Operator="+">+</button>
+
+      <button data-Number="1">1</button>
+      <button data-Number="2">2</button>
+      <button data-Number="3">3</button>
+      <button data-Action="equals" class="equals">=</button>
+
+      <button data-Number="0" class="zero">0</button>
+      <button data-Action="decimal">.</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
