@@ -19,12 +19,12 @@ A browser-based calculator built with HTML, CSS and vanilla JavaScript.
 - `calculate()` uses a `switch` statement to apply the operator.
 - Operations are evaluated left to right as they are entered, like a basic pocket calculator (5 + 3 × 2 = 16).
 
-## Live demo
-https://aimansanaullah5-ops.github.io/OIBSIP/level-2/task-1-calculator/
+
 
 ## What I learned
-(Write 2-3 sentences in your own words: what was hard, which bugs you fixed, what you would improve.)
+While testing, I found two bugs: backspace was not removing the operator, and
+the C button stopped working. I fixed both and tested the calculator again.
 
 ## Resources
 - MDN: addEventListener, switch, parseFloat
-- (Name the YouTube tutorial you watched)
+- I used an AI assistant to help me understand the chaining logic, and I tested and debugged the code myself.
