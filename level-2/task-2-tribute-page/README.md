@@ -21,10 +21,6 @@ A tribute page dedicated to Marie Curie, built with HTML and CSS.
 - The timeline uses `grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))`, so the cards wrap automatically on smaller screens.
 - Font sizes use `clamp()` so headings scale with the screen width.
 
-
-## What I learned
-<2-3 sentences in your own words: for example how you handled responsive layout, how you chose the colours and fonts, or what you found hard>
-
 ## Resources
 - Facts checked against Britannica and Wikipedia and rewritten in my own words
 - Portrait: <name from the Wikimedia Commons file page>, Public domain, via Wikimedia Commons

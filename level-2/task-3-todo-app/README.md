@@ -24,10 +24,6 @@ An interactive to-do list built with HTML, CSS and vanilla JavaScript. Tasks are
 - The array is saved to localStorage after each change and loaded again on startup.
 
 
-
-## What I learned
-<2-3 sentences in your own words>
-
 ## Resources
 - MDN: DOM manipulation, localStorage, event delegation
 - I used an AI assistant to help me with the structure and logic, and I tested and debugged the app myself.
