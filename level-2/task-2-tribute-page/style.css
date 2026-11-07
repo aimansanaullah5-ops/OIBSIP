@@ -1,0 +1,97 @@
+:root {
+  --plum: #3b2d3f;
+  --mauve: #b08ba3;
+  --blush: #f3e9ee;
+  --cream: #fbf7f9;
+  --text-dark: #2f2630;
+  --text-light: #f3e9ee;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  line-height: 1.7;
+  color: var(--text-dark);
+  background: var(--cream);
+}
+
+h1, h2, blockquote {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+section { padding: 60px 20px; }
+section > * { max-width: 760px; margin-left: auto; margin-right: auto; }
+h2 { font-size: 2rem; margin-bottom: 24px; text-align: center; }
+
+/* Hero: dark plum */
+.hero {
+  background: var(--plum);
+  color: var(--text-light);
+  text-align: center;
+  padding: 60px 20px;
+}
+.hero h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); }
+.tagline { margin: 12px 0 30px; font-size: 1.15rem; color: var(--mauve); }
+.portrait {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 16px;
+  border: 4px solid var(--mauve);
+}
+
+/* Biography: soft blush */
+.biography { background: var(--blush); }
+.biography p { margin-bottom: 18px; }
+
+/* Achievements: dusty mauve */
+.achievements { background: var(--mauve); }
+.timeline {
+  list-style: none;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.timeline li {
+  background: var(--cream);
+  padding: 20px;
+  border-radius: 12px;
+}
+.year {
+  display: block;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--plum);
+}
+
+/* Quote: dark plum */
+.quote-section { background: var(--plum); color: var(--text-light); }
+blockquote {
+  border-left: 6px solid var(--mauve);
+  padding-left: 24px;
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  font-style: italic;
+}
+blockquote cite {
+  display: block;
+  margin-top: 16px;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  color: var(--mauve);
+}
+
+.site-footer {
+  background: var(--text-dark);
+  color: var(--text-light);
+  text-align: center;
+  padding: 20px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  section { padding: 40px 16px; }
+  h2 { font-size: 1.6rem; }
+}
