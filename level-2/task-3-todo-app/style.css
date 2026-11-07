@@ -1,0 +1,115 @@
+:root {
+  --page-bg: #2f2630;
+  --panel: #4a3a4d;
+  --item: #5a4860;
+  --accent: #b08ba3;
+  --rose: #d8b4a8;
+  --danger: #c97c8a;
+  --text: #f3e9ee;
+  --muted: #b79eb0;
+  --dark: #2f2630;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  background: var(--page-bg);
+  color: var(--text);
+  font-family: "Segoe UI", Arial, sans-serif;
+  padding: 40px 16px;
+}
+
+.app { max-width: 960px; margin: 0 auto; }
+h1 { text-align: center; margin-bottom: 24px; }
+
+/* ---------- Add task form ---------- */
+.task-form { display: flex; gap: 10px; margin-bottom: 28px; }
+.task-form input {
+  flex: 1;
+  padding: 14px 16px;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background: var(--panel);
+  color: var(--text);
+}
+.task-form input:focus { outline: none; border-color: var(--accent); }
+.add-btn {
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  background: var(--rose);
+  color: var(--dark);
+  cursor: pointer;
+}
+
+/* ---------- Two panels (CSS Grid) ---------- */
+.lists { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.panel { background: var(--panel); border-radius: 16px; padding: 20px; }
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+h2 { font-size: 1.15rem; }
+.count {
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: var(--accent);
+  color: var(--dark);
+  font-weight: 600;
+}
+
+/* ---------- Tasks ---------- */
+.task-list { list-style: none; display: grid; gap: 10px; }
+.task {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  background: var(--item);
+  border-radius: 12px;
+}
+.task-body { min-width: 0; }
+.task-text { display: block; overflow-wrap: anywhere; }
+.task-text.done { text-decoration: line-through; color: var(--muted); }
+.time { display: block; margin-top: 4px; font-size: 0.75rem; color: var(--muted); }
+.edit-input {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 1rem;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--text);
+}
+
+/* ---------- Buttons ---------- */
+.actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.actions button {
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--accent);
+  color: var(--dark);
+}
+.actions .toggle-btn { background: var(--rose); }
+.actions .delete-btn { background: var(--danger); }
+.actions button:hover, .add-btn:hover { filter: brightness(1.1); }
+
+/* ---------- Empty message ---------- */
+.empty { text-align: center; padding: 20px 10px; color: var(--muted); font-style: italic; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 700px) {
+  .lists { grid-template-columns: 1fr; }
+  .task-form { flex-direction: column; }
+}
